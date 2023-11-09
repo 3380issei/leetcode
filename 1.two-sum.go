@@ -5,8 +5,21 @@
  */
 
 // @lc code=start
+// O(n^2)
 func twoSum(nums []int, target int) []int {
-    
+	// O(n)
+	for i := 0; i < len(nums)-1; i++ {
+
+		// O(n)
+		for j := i + 1; j < len(nums); j++ {
+			sum := nums[i] + nums[j]
+			if sum == target {
+				return []int{i, j}
+			}
+		}
+	}
+	return []int{}
 }
+
 // @lc code=end
 
